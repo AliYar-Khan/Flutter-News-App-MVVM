@@ -3,7 +3,7 @@
  
 **Screenshots**
       <p float="left">
-  <img src="https://github.com/AliYar-Khan/Flutter-News-App-MVVM/blob/main/Screenshots/Screenshot_20210411_194752.pn" width="100" />
+  <img src="https://github.com/AliYar-Khan/Flutter-News-App-MVVM/blob/main/Screenshots/Screenshot_20210411_194752.png" width="100" />
   <img src="https://github.com/AliYar-Khan/Flutter-News-App-MVVM/blob/main/Screenshots/Screenshot_20210411_194803.png" width="100" /> 
 </p>
 
