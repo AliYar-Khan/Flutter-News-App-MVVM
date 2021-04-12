@@ -31,25 +31,6 @@ class _NewsHomeScreenState extends State<NewsHomeScreen> {
     var listViewModel = Provider.of<ListViewModel>(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.3,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Know ',
-              style: TextStyle(
-                color: Colors.black
-              ),
-            ),
-            Text(
-              'Everything !!',
-              style: TextStyle(
-                color: Colors.blue,
-              ),
-            ),
-          ],
-        ),
         actions: [
           PopupMenuButton(
             onSelected: (country) {
@@ -75,6 +56,32 @@ class _NewsHomeScreenState extends State<NewsHomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: EdgeInsets.only(left: 30.0),
+                child: Text(
+                  'News',
+                  style: TextStyle(
+                    fontSize: 50.0,
+                  ),
+                ),
+              ),
+              Divider(
+                color: Color(0xffff8a30),
+                height: 40.0,
+                thickness: 8.0,
+                indent: 30.0,
+                endIndent: 20.0,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 30.0,top: 15.0,bottom: 15.0,),
+                child: Text(
+                  'Categories',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
               Container(
                 height: 70.0,
                 padding: EdgeInsets.symmetric(horizontal: 12.0),
@@ -103,7 +110,7 @@ class _NewsHomeScreenState extends State<NewsHomeScreen> {
                 padding: EdgeInsets.only(
                   left: 30.0,
                   bottom: 15.0,
-                  top: 15.0,
+                  top: 20.0,
                 ),
                 child: Text(
                   'Headlines',

@@ -26,4 +26,8 @@ class ViewModel {
     return _newsArticle.urlToImage;
   }
 
+  String get authour {
+    return _newsArticle.author;
+  }
+
 }

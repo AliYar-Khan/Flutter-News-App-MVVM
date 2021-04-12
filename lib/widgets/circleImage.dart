@@ -14,7 +14,7 @@ class CircleImage extends StatelessWidget {
         return Container(
           margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0,),
           decoration: BoxDecoration(
-            borderRadius: BorderRadiusDirectional.circular(18.0),
+            borderRadius: BorderRadiusDirectional.circular(20.0),
             image: DecorationImage(
               fit: BoxFit.cover,
               image: imageProvider,
@@ -36,7 +36,7 @@ class CircleImage extends StatelessWidget {
               Icons.error
             ),
             Text(
-              'Error',
+              'Error Loading image',
             ),
           ],
         );

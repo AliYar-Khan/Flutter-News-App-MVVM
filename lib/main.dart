@@ -13,6 +13,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xfffefdfd),
+        appBarTheme: AppBarTheme(
+          color: Color(0xfffefdfd),
+          elevation: 0.0,
+          textTheme: TextTheme(
+            headline6: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
+          actionsIconTheme: IconThemeData(
+            color: Colors.black,
+          ),
+        ),
+      ),
         builder: (context, widget) => ResponsiveWrapper.builder(
           BouncingScrollWrapper.builder(context, widget!),
           maxWidth: 1200,
