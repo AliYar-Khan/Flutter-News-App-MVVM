@@ -2,7 +2,7 @@ import 'package:newsapp/models/categoryModel.dart';
 
 class Constants {
 
-  static const apiKey = "";
+  static const apiKey = "bd197bcc3e594ab488add3b11016d3fd";
   static const apiTopHeadlines = "https://newsapi.org/v2/top-headlines?country=us&apiKey=$apiKey";
 
   static String headlinesFor(String country) {
