@@ -1,15 +1,19 @@
-import 'package:dio/dio.dart';
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 import 'package:newsapp/models/news_article.dart';
 import 'package:newsapp/constant/constants.dart';
 
 class WebService {
-  var dio = Dio();
 
   Future<List<NewsArticle>> getTopHeadlines () async {
-    final response = await dio.get(Constants.apiTopHeadlines);
+    var url = Uri.parse(Constants.apiTopHeadlines);
+    var response = await http.get(url);
     if(response.statusCode == 200) {
-      final result = response.data;
-      Iterable list = result['articles'];
+      final result = response.body;
+      print('Response body getTopHeadlines: $result');
+      var json = jsonDecode(result.toString());
+      Iterable list = json['articles'];
       return list.map((article) => NewsArticle.fromJson(article)).toList();
     }
     else {
@@ -18,10 +22,13 @@ class WebService {
   }
 
   Future<List<NewsArticle>> getHeadlinesByCountry (String country) async {
-    final response = await dio.get(Constants.headlinesFor(country));
+    var url = Uri.parse(Constants.headlinesFor(country));
+    final response = await http.get(url);
     if(response.statusCode == 200) {
-      final result = response.data;
-      Iterable list = result['articles'];
+      final result = response.body;
+      print('Response body getHeadlinesByCountry: $result');
+      var json = jsonDecode(result.toString());
+      Iterable list = json['articles'];
       return list.map((article) => NewsArticle.fromJson(article)).toList();
     }
     else {
@@ -30,10 +37,13 @@ class WebService {
   }
 
   Future<List<NewsArticle>> getHeadlinesByCategory (String category) async {
-    final response = await dio.get(Constants.headlinesForCategory(category));
+    var url = Uri.parse(Constants.headlinesForCategory(category));
+    final response = await http.get(url);
     if(response.statusCode == 200) {
-      final result = response.data;
-      Iterable list = result['articles'];
+      final result = response.body;
+      print('Response body getHeadlinesByCategory: $result');
+      var json = jsonDecode(result.toString());
+      Iterable list = json['articles'];
       return list.map((article) => NewsArticle.fromJson(article)).toList();
     }
     else {

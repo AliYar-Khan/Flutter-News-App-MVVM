@@ -19,6 +19,7 @@ class CategoryTile extends StatelessWidget {
                 width: 170,
                 height: 90,
                 fit: BoxFit.cover,
+                errorWidget: (context, url, error) => new Text(error),
               ),
           ),
           Container(
